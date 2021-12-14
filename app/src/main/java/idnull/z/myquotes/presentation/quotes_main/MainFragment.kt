@@ -23,14 +23,16 @@ class MainFragment : Fragment() {
 
 
 
+
+
     val component by lazy {
-        DaggerAppComponent.builder().context(requireContext().applicationContext).build()
+        (requireContext().applicationContext as App).component
     }
 
-        //val viewModel:MainViewModel by viewModels()
+        val viewModel:MainViewModel by viewModels()
 
-    @Inject
-    lateinit var useCase: MainScreenUseCase
+//    @Inject
+  //  lateinit var useCase: MainScreenUseCase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +52,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.test.text = useCase.test1
+        binding.test.text = viewModel.result
     }
 
     override fun onStart() {
