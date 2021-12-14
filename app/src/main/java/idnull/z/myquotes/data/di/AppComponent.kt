@@ -1,12 +1,14 @@
-package idnull.z.myquotes.data.DI
+package idnull.z.myquotes.data.di
 
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import idnull.z.myquotes.data.di.viewmodel.BindsViewModelModule
+import idnull.z.myquotes.data.di.viewmodel.ViewModelModule
 import idnull.z.myquotes.presentation.quotes_main.MainFragment
 
 
-@Component(modules = [MainModule::class])
+@Component(modules = [MainModule::class, BindsViewModelModule::class, ViewModelModule::class])
 interface AppComponent {
 
 

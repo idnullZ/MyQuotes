@@ -1,7 +1,6 @@
-package idnull.z.myquotes.data.DI
+package idnull.z.myquotes.data.di
 
 import dagger.Module
-import idnull.z.myquotes.data.RemoteDataSource
 
 
 @Module
