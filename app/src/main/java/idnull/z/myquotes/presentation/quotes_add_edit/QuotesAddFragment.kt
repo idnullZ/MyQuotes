@@ -7,20 +7,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import idnull.z.myquotes.R
+import idnull.z.myquotes.databinding.QuotesAddFragmentBinding
 
 class QuotesAddFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = QuotesAddFragment()
-    }
 
-    private lateinit var viewModel: QuotesAddViewModel
+    private var _binding:QuotesAddFragmentBinding? = null
+    private val binding
+    get() = _binding ?: throw RuntimeException("QuotesAddFragmentBinding null ")
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.quotes_add_fragment, container, false)
+    ): View {
+        _binding = QuotesAddFragmentBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 

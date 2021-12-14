@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
 
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="idnull.z.myquotes.presentation.quotes_main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_quotesListFragment"
+            app:destination="@id/quotesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotesListFragment"
+        android:name="idnull.z.myquotes.presentation.quotes_list.QuotesListFragment"
+        android:label="QuotesListFragment" >
+        <action
+            android:id="@+id/action_quotesListFragment_to_quotesAddFragment"
+            app:destination="@id/quotesAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotesAddFragment"
+        android:name="idnull.z.myquotes.presentation.quotes_add_edit.QuotesAddFragment"
+        android:label="quotes_add_fragment"
+        tools:layout="@layout/quotes_add_fragment" />
 </navigation>
