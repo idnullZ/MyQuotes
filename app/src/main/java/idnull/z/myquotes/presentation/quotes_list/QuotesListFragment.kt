@@ -29,9 +29,7 @@ class QuotesListFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        binding.test.setOnClickListener {
-            findNavController().navigate(R.id.action_quotesListFragment_to_quotesAddFragment)
-        }
+
     }
 
 

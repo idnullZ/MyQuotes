@@ -7,7 +7,7 @@ class App: Application() {
 
 
     val component by lazy {
-        DaggerAppComponent.builder().context(this ).build()
+       DaggerAppComponent.builder().context(this).build()
     }
 
 
