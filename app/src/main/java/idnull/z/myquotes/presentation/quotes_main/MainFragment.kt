@@ -26,14 +26,8 @@ class MainFragment : Fragment() {
 
 
 
-
-    val component by lazy {
-        (requireContext().applicationContext as App).component
-    }
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        component.inject(this)
+        (requireActivity().application as App).component.inject(this)
         viewModel = injectViewModel(factory = viewModelFactory)
         super.onCreate(savedInstanceState)
     }

@@ -1,0 +1,25 @@
+CREATE TABLE quotesEntity (
+
+   id INTEGER NOT NULL PRIMARY KEY,
+    quot TEXT NOT NULL
+
+);
+
+
+getQuotesById:
+SELECT *
+FROM quotesEntity
+WHERE id = :id;
+
+getAllQuotes:
+SELECT *
+FROM quotesEntity;
+
+insertQuotes:
+INSERT OR REPLACE
+INTO quotesEntity
+VALUES(?,?);
+
+deleteQuotesById:
+DELETE FROM quotesEntity
+WHERE id = :id;
