@@ -4,12 +4,19 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
+import idnull.z.myquotes.presentation.quotes_add_edit.QuotesAddViewModel
 import idnull.z.myquotes.presentation.quotes_list.QuotesListViewModel
 import idnull.z.myquotes.presentation.quotes_main.MainViewModel
 
 
 @Module
 interface BindsViewModelModule {
+
+
+    @IntoMap
+    @ViewModelKey(QuotesAddViewModel::class)
+    @Binds
+    fun bindQuotesAddViewModel(impl: QuotesAddViewModel): ViewModel
 
 
     @IntoMap
