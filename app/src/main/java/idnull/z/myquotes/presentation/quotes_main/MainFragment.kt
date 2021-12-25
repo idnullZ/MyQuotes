@@ -11,25 +11,44 @@ import idnull.z.myquotes.R
 import idnull.z.myquotes.data.App
 import idnull.z.myquotes.data.di.viewmodel.injectViewModel
 import idnull.z.myquotes.databinding.MainFragmentBinding
+import retrofit2.Retrofit
 import javax.inject.Inject
 
 class MainFragment : Fragment() {
 
+
+    ////https://quoteclear.web.app/api/random
+
     private var _binding: MainFragmentBinding? = null
     private val binding: MainFragmentBinding
-    get () = _binding ?: throw RuntimeException("MainFragmentBinding null  ")
+        get() = _binding ?: throw RuntimeException("MainFragmentBinding null  ")
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     lateinit var viewModel: MainViewModel
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         (requireActivity().application as App).component.inject(this)
         viewModel = injectViewModel(factory = viewModelFactory)
         super.onCreate(savedInstanceState)
+    }
+
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.quot.observe(viewLifecycleOwner, {
+            binding.text.text = it.text
+        })
+        binding.upDateBtn.setOnClickListener {
+            viewModel.update()
+        }
+        binding.create.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_quotesListFragment)
+        }
+        binding.saveBtn.setOnClickListener {
+            viewModel.save()
+        }
     }
 
 
@@ -42,25 +61,11 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.test.text = viewModel.result
-    }
-
-    override fun onStart() {
-        super.onStart()
-        binding.test.setOnClickListener {
-            findNavController().navigate(R.id.action_mainFragment_to_quotesListFragment)
-        }
-    }
-
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
-
 
 
 }

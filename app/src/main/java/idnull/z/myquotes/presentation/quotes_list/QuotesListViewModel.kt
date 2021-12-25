@@ -16,6 +16,11 @@ import javax.inject.Inject
 class QuotesListViewModel @Inject constructor(
     private val quotesDataSource: QuotesDataSource
 ): ViewModel() {
+
+    private var _listQuotes :MutableLiveData<List<QuotesEntity>> = MutableLiveData()
+    val listQuotes: LiveData<List<QuotesEntity>>  get() = _listQuotes
+
+
     fun delete(item: QuotesEntity) {
 
         viewModelScope.launch {
@@ -27,8 +32,7 @@ class QuotesListViewModel @Inject constructor(
 
     }
 
-    private var _listQuotes :MutableLiveData<List<QuotesEntity>> = MutableLiveData()
-    val listQuotes: LiveData<List<QuotesEntity>>  get() = _listQuotes
+
 
 
     init {

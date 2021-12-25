@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [MainModule::class, BindsViewModelModule::class, ViewModelModule::class])
+@Component(modules = [MainModule::class, BindsViewModelModule::class, ViewModelModule::class , NetworkModule::class])
 interface AppComponent {
 
 

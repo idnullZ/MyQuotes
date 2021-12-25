@@ -1,11 +1,13 @@
 package idnull.z.myquotes.domain.usecase
 
 import idnull.z.myquotes.data.MainScreenRepository
+import idnull.z.myquotes.domain.Respond
 import javax.inject.Inject
 
 class MainScreenUseCase @Inject constructor(
-    val repository: MainScreenRepository
+   private val repository: MainScreenRepository
 ) {
-
-    val test1 = repository.test
+   suspend operator fun invoke(): Respond {
+        return repository.getQuot()
+    }
 }
