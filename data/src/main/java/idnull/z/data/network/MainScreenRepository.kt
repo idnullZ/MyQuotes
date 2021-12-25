@@ -1,7 +1,6 @@
-package idnull.z.myquotes.data
+package idnull.z.data.network
 
-import idnull.z.myquotes.data.network.QuoteApi
-import idnull.z.myquotes.domain.Respond
+import idnull.z.domain.Respond
 import javax.inject.Inject
 
 class MainScreenRepository @Inject constructor(

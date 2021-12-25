@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.ListAdapter
 import idnull.z.myquotes.R
-import idnull.z.myquotes.domain.Quot
 import idnull.z.myquotes.presentation.quotes_list.QuotesListAdapter.QuotesItemViewHolder
 import mydb.quotesdb.QuotesEntity
 

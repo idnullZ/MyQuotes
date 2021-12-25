@@ -1,10 +1,10 @@
 package idnull.z.myquotes.data.di
 
 import android.app.Application
-import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import idnull.z.myquotes.data.di.viewmodel.BindsViewModelModule
+import idnull.z.myquotes.data.di.viewmodel.NetworkModule
 import idnull.z.myquotes.data.di.viewmodel.ViewModelModule
 import idnull.z.myquotes.presentation.quotes_add_edit.QuotesAddFragment
 import idnull.z.myquotes.presentation.quotes_list.QuotesListFragment
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [MainModule::class, BindsViewModelModule::class, ViewModelModule::class , NetworkModule::class])
+@Component(modules = [MainModule::class, BindsViewModelModule::class, ViewModelModule::class , NetworkModule::class] )
 interface AppComponent {
 
 

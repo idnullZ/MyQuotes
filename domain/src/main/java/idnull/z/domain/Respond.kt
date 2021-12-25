@@ -1,4 +1,4 @@
-package idnull.z.myquotes.domain
+package idnull.z.domain
 
 data class Respond(
     val cttId: String,

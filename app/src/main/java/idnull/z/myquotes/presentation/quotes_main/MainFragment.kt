@@ -11,13 +11,10 @@ import idnull.z.myquotes.R
 import idnull.z.myquotes.data.App
 import idnull.z.myquotes.data.di.viewmodel.injectViewModel
 import idnull.z.myquotes.databinding.MainFragmentBinding
-import retrofit2.Retrofit
 import javax.inject.Inject
 
 class MainFragment : Fragment() {
 
-
-    ////https://quoteclear.web.app/api/random
 
     private var _binding: MainFragmentBinding? = null
     private val binding: MainFragmentBinding

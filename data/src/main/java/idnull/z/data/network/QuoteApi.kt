@@ -1,6 +1,6 @@
-package idnull.z.myquotes.data.network
+package idnull.z.data.network
 
-import idnull.z.myquotes.domain.Respond
+import idnull.z.domain.Respond
 import retrofit2.http.GET
 import retrofit2.http.Headers
 

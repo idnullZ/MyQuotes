@@ -1,15 +1,15 @@
-package idnull.z.myquotes.data.di
+package idnull.z.myquotes.data.di.viewmodel
 
 
 import dagger.Module
 import dagger.Provides
-import idnull.z.myquotes.data.network.QuoteApi
-import idnull.z.myquotes.utils.BASE_URL
+import idnull.z.data.network.QuoteApi
+import idnull.z.domain.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
-object NetworkModule {
+class NetworkModule {
 
     @Provides
     fun provideRetrofit(): Retrofit {
